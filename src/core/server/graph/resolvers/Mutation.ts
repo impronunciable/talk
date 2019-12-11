@@ -237,4 +237,8 @@ export const Mutation: Required<GQLMutationTypeResolver<void>> = {
     flags: await ctx.mutators.Settings.disableFeatureFlag(input.flag),
     clientMutationId: input.clientMutationId,
   }),
+  createSite: async (source, { input }, ctx) => ({
+    site: await ctx.mutators.Sites.create(input),
+    clientMutationId: input.clientMutationId,
+  }),
 };
