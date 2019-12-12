@@ -85,6 +85,7 @@ export const StreamContainer: FunctionComponent<Props> = props => {
   const [local, setLocal] = useLocal<StreamContainerLocal>(
     graphql`
       fragment StreamContainerLocal on Local {
+        siteID
         commentsTab
         commentsOrderBy
       }
@@ -156,7 +157,7 @@ export const StreamContainer: FunctionComponent<Props> = props => {
           <StreamDeletionRequestCalloutContainer viewer={props.viewer} />
         )}
         <CommunityGuidelinesContainer settings={props.settings} />
-        {!banned && !suspended && (
+        {!banned && !suspended && local.siteID && (
           <PostCommentFormContainer
             settings={props.settings}
             story={props.story}
@@ -164,6 +165,7 @@ export const StreamContainer: FunctionComponent<Props> = props => {
             tab={local.commentsTab}
             onChangeTab={onChangeTab}
             commentsOrderBy={local.commentsOrderBy}
+            siteID={local.siteID}
           />
         )}
         {banned && <BannedInfo />}
