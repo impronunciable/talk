@@ -3,7 +3,7 @@ import { Db } from "mongodb";
 
 import { Config } from "coral-server/config";
 import { StoryURLInvalidError } from "coral-server/errors";
-import { StoryCreatedCoralEvent } from "coral-server/events/events";
+import { StoryCreatedCoralEvent } from "coral-server/events";
 import { CoralEventPublisherBroker } from "coral-server/events/publisher";
 import logger from "coral-server/logger";
 import {

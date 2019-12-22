@@ -6,7 +6,7 @@ import {
   CommentReleasedCoralEvent,
   CommentReplyCreatedCoralEvent,
   CommentStatusUpdatedCoralEvent,
-} from "coral-server/events/events";
+} from "coral-server/events";
 import { CoralEventPublisherBroker } from "coral-server/events/publisher";
 import { Comment, hasPublishedStatus } from "coral-server/models/comment";
 import { CommentModerationQueueCounts } from "coral-server/models/story";
