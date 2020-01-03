@@ -65,3 +65,4 @@ export {
 } from "./ValidationMessage";
 export { BrandName, BrandMark, LogoHorizontal } from "./Brand";
 export { default as InputLabel } from "./InputLabel";
+export { default as AppNotification } from "./AppNotification";
