@@ -11,11 +11,15 @@ const filterValidFeatureFlags = () => {
 
   // Return a type guard for the feature flag.
   return (flag: string | GQLFEATURE_FLAG): flag is GQLFEATURE_FLAG =>
-    flags.includes(flag);
+    flags.includes(flag as GQLFEATURE_FLAG);
 };
 
 export const Settings: GQLSettingsTypeResolver<Tenant> = {
   slack: ({ slack = {} }) => slack,
   featureFlags: ({ featureFlags = [] }) =>
     featureFlags.filter(filterValidFeatureFlags()),
+  multisite: async ({ id }, input, ctx) => {
+    const sites = await ctx.loaders.Sites.connection({});
+    return sites.edges.length > 1;
+  },
 };
