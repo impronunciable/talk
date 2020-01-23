@@ -1235,11 +1235,6 @@ type Settings {
   staticURI: String @auth(roles: [ADMIN])
 
   """
-  allowedDomains is the list of domains that stories can come from.
-  """
-  allowedDomains: [String!]! @auth(roles: [ADMIN])
-
-  """
   locale is the specified locale for this Tenant.
   """
   locale: Locale!
