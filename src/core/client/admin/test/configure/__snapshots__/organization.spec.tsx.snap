@@ -218,7 +218,7 @@ exports[`renders configure organization 1`] = `
                   Add a new site to your organization or edit an existing site's details.
                 </p>
                 <a
-                  className="Button-root Button-sizeLarge Button-colorRegular Button-variantRegular Button-uppercase Button-iconLeft Button-linkButton"
+                  className="Button-root Button-sizeRegular Button-colorRegular Button-variantRegular Button-uppercase Button-iconLeft Button-linkButton"
                   data-color="regular"
                   data-variant="regular"
                   href="/admin/configure/organization/sites/new"
